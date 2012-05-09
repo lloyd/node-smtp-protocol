@@ -11,8 +11,11 @@ exports.createServer = function (domain, cb) {
         cb = domain;
         domain = undefined;
     }
-    
+
     return net.createServer(function (stream) {
+      stream.on('data', function(buf) {
+        console.log('<<', buf.toString().trim());
+      });
         cb(proto.client(domain, stream));
     });
 };
