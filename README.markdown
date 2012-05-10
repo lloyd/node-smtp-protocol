@@ -45,7 +45,7 @@ elsewhere:
 
 ```
 $ nc localhost 9025
-250 beep
+220 beep
 helo
 250 
 mail from: <beep@localhost>
